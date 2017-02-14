@@ -2,6 +2,7 @@ var passport = require("passport");
 var LocalStrategy = require("passport-local").Strategy;
 var User = require("../models/user");
 
+
 passport.use("local", new LocalStrategy(
   { usernameField: "username", passwordField: "password" },
   findAndComparePassword
