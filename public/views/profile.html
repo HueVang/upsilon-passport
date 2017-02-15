@@ -18,6 +18,24 @@
   <p>{{ cohort }}</p>
 </div>
 
-<select>
-  <option ng-repeat="cohort in profile.cohorts" value="{{cohort.cohort_name}}">{{ cohort.cohort_name }}</option>
-</select>
+<button class="btn-warning" ng-click="profile.edit()">Edit</button>
+
+<form>
+  <div class="col-sm-4">
+    <input placeholder="First Name" type="text" ng-model=""/>
+    <input placeholder="Last Name" type="text" ng-model=""/>
+    <textarea class="form-control" placeholder="Personal Summary" type="text" ng-model=""></textarea>
+  </div>
+  <div class="col-sm-4">
+    <select>
+      <option ng-repeat="cohort in profile.cohorts" value="{{cohort.cohort_name}}">{{ cohort.cohort_name }}</option>
+    </select>
+    <input placeholder="Job Title/Headline" type="text" ng-model=""/>
+    <input placeholder="Location" type="text" ng-model=""/>
+    <input placeholder="Fun Fact(s)" type="text" ng-model=""/>
+    <div class="btn-group">
+      <button class="btn-success">Save Changes</button>
+      <button class="btn-danger">Cancel</button>
+    </div>
+  </div>
+</form>

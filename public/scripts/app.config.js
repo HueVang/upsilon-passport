@@ -18,6 +18,10 @@ angular
         templateUrl: "views/register.html",
         controller: "RegisterController as register"
       })
+      .when("/profile-edit", {
+        templateUrl: "views/profile-edit.html",
+        controller: "ProfileController as profile"
+      })
       .when("/profile" , {
         templateUrl: "views/profile.html",
         controller: "ProfileController as profile"

@@ -2,6 +2,18 @@ angular.module('soloApp').controller('ProfileController', function($http, $locat
   console.log('ProfileController loaded');
 
   var ctrl = this;
+  ctrl.user_info = { "firstName" : "",
+  "lastName" : "",
+  "image" : "",
+  "personalSummary" : "",
+  "cohort" : "",
+  "title" : "",
+  "location_name" : "",
+  "facts" : ""
+  };
+
+  console.log('This is user info object: ', ctrl.user_info);
+
 
   ctrl.getCohorts = function() {
      $http.get('/profile/cohorts').then(function(response) {
@@ -13,6 +25,18 @@ angular.module('soloApp').controller('ProfileController', function($http, $locat
   }; // end getCohorts function
 
   ctrl.getCohorts();
+
+  ctrl.edit = function() {
+    $location.path('/profile-edit');
+  }; //end edit function
+
+  ctrl.cancel = function() {
+    $location.path('/profile');
+  }; // end cancel function
+
+  ctrl.saveChanges = function() {
+    console.log('This is the user\'s info: ', ctrl.user_info);
+  }; // end saveChanges function
 
   ctrl.logout = function() {
     $http.delete('/login').then(function(){

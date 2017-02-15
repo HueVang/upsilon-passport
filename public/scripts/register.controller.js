@@ -10,7 +10,7 @@ angular.module('soloApp').controller('RegisterController', function($http, $loca
       password: ctrl.password
     }).then(function(response){
       console.log(response);
-      $location.path('/home');
+      $location.path('/profile-edit');
     }, function(error) {
       console.log('error registering new user', error);
     });
