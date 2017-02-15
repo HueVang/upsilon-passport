@@ -1,4 +1,4 @@
-angular.module('passportApp')
+angular.module('soloApp')
 .controller('LoginController', LoginController);
 
 function LoginController($http, $location) {

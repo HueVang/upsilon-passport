@@ -7,6 +7,7 @@ var passport = require('passport');
 var connection = require('./db/connection');
 var login = require('./routes/login');
 var register = require('./routes/register');
+var profile = require('./routes/profile');
 
 require('./auth/setup');
 
@@ -33,10 +34,11 @@ app.use(passport.session());
 
 // no auth needed
 app.use('/login', login);
-app.use('/register', register)
+app.use('/register', register);
 app.get('/loginStatus', function(req, res){
   res.send(req.isAuthenticated());
 })
+app.use('/profile', profile);
 
 // the following routes require authentication
 app.use('/private', ensureAuthenticated);

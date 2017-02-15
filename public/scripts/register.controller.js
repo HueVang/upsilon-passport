@@ -1,4 +1,5 @@
-angular.module('passportApp').controller('RegisterController', function($http, $location){
+angular.module('soloApp').controller('RegisterController', function($http, $location){
+  console.log('RegisterController loaded');
   var ctrl = this;
 
   ctrl.register = function() {

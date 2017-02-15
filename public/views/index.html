@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html ng-app="passportApp">
+<html ng-app="soloApp">
 <head>
   <meta charset="utf-8">
-  <title>Passport</title>
+  <title>Cohort Tracker</title>
 
   <link rel="stylesheet" href="vendors/bootstrap.min.css" media="screen" title="no title">
+  <link rel="stylesheet" href="/css/styles.css">
   <script src="vendors/angular.min.js" charset="utf-8"></script>
   <script src="vendors/angular-route.min.js" charset="utf-8"></script>
 
@@ -14,10 +15,14 @@
   <script src="scripts/register.controller.js" charset="utf-8"></script>
   <script src="scripts/home.controller.js" charset="utf-8"></script>
   <script src="scripts/auth.service.js" charset="utf-8"></script>
-
+  <script src="scripts/cohorts-guest.controller.js" charset="utf-8"></script>
+  <script src="scripts/cohorts.controller.js" charset="utf-8"></script>
+  <script src="scripts/home-guest.controller.js" charset="utf-8"></script>
+  <script src="scripts/profile.controller.js" charset="utf-8"></script>
 
   <base href="/" />
 </head>
+<h1>Cohort Tracker</h1>
 <body class="container">
   <ng-view></ng-view>
 </body>

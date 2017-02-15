@@ -1,4 +1,4 @@
-angular.module('passportApp').controller('HomeController', function($http, $location){
+angular.module('soloApp').controller('HomeController', function($http, $location){
   this.logout = function() {
     $http.delete('/login').then(function(){
       console.log('Successfully logged out!');
