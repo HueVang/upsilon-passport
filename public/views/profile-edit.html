@@ -34,7 +34,7 @@
     <input placeholder="Location" type="text" ng-model="profile.user_info.location_name"/>
     <input placeholder="Fun Fact(s)" type="text" ng-model="profile.user_info.facts"/>
     <div class="btn-group">
-      <button class="btn-success" ng-click="profile.saveChanges()">Save Changes</button>
+      <button class="btn-success" ng-click="profile.saveChanges(profile.user_info)">Save Changes</button>
       <button class="btn-danger" ng-click="profile.cancel()">Cancel</button>
     </div>
   </div>

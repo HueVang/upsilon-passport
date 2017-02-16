@@ -2,7 +2,7 @@ angular.module('soloApp').controller('ProfileController', function($http, $locat
   console.log('ProfileController loaded');
 
   var ctrl = this;
-  ctrl.user_info = { "firstName" : "",
+  ctrl.user_info = {"firstName" : "",
   "lastName" : "",
   "image" : "",
   "personalSummary" : "",
@@ -34,8 +34,13 @@ angular.module('soloApp').controller('ProfileController', function($http, $locat
     $location.path('/profile');
   }; // end cancel function
 
-  ctrl.saveChanges = function() {
-    console.log('This is the user\'s info: ', ctrl.user_info);
+  ctrl.saveChanges = function(userInfo) {
+    console.log('This is the user\'s info: ', userInfo);
+    return $http.post('/profile/post', userInfo).then(function(response) {
+      return response;
+    }).catch(function(err) {
+      console.log('error getting response from profile.js: ', err);
+    });
   }; // end saveChanges function
 
   ctrl.logout = function() {
