@@ -2,15 +2,15 @@ angular.module('soloApp').controller('ProfileController', function($http, $locat
   console.log('ProfileController loaded');
 
   var ctrl = this;
-  ctrl.user_info = {"firstName" : "",
-  "lastName" : "",
+  ctrl.user_info = [{"firstname" : "",
+  "lastname" : "",
   "image" : "",
-  "personalSummary" : "",
+  "personalsummary" : "",
   "cohort" : "",
   "title" : "",
   "location_name" : "",
   "facts" : ""
-  };
+}];
 
   console.log('This is user info object: ', ctrl.user_info);
 
@@ -26,6 +26,18 @@ angular.module('soloApp').controller('ProfileController', function($http, $locat
 
   ctrl.getCohorts();
 
+  ctrl.getUserInfo = function() {
+    $http.get('/profile/userinfo').then(function(response) {
+      ctrl.user_info = response.data;
+      console.log('This is the user info: ', response.data);
+      console.log('This is ctrl.user_info:', ctrl.user_info);
+    }).catch(function(err) {
+      console.log('error getting response from the user :', err);
+    });
+  }; // end getUserInfo function
+
+  ctrl.getUserInfo();
+
   ctrl.edit = function() {
     $location.path('/profile-edit');
   }; //end edit function
@@ -37,7 +49,8 @@ angular.module('soloApp').controller('ProfileController', function($http, $locat
   ctrl.saveChanges = function(userInfo) {
     console.log('This is the user\'s info: ', userInfo);
     return $http.post('/profile/post', userInfo).then(function(response) {
-      return response;
+      $location.path('/profile');
+      // return response;
     }).catch(function(err) {
       console.log('error getting response from profile.js: ', err);
     });

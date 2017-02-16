@@ -14,28 +14,18 @@
 <p>
   This is where the user profile will be.
 </p>
-<div ng-repeat="cohort in profile.cohorts">
-  <p>{{ cohort }}</p>
-</div>
 
 <button class="btn-warning" ng-click="profile.edit()">Edit</button>
 
-<form>
-  <div class="col-sm-4">
-    <input placeholder="First Name" type="text" ng-model=""/>
-    <input placeholder="Last Name" type="text" ng-model=""/>
-    <textarea class="form-control" placeholder="Personal Summary" type="text" ng-model=""></textarea>
-  </div>
-  <div class="col-sm-4">
-    <select>
-      <option ng-repeat="cohort in profile.cohorts" value="{{cohort.cohort_name}}">{{ cohort.cohort_name }}</option>
-    </select>
-    <input placeholder="Job Title/Headline" type="text" ng-model=""/>
-    <input placeholder="Location" type="text" ng-model=""/>
-    <input placeholder="Fun Fact(s)" type="text" ng-model=""/>
-    <div class="btn-group">
-      <button class="btn-success">Save Changes</button>
-      <button class="btn-danger">Cancel</button>
-    </div>
-  </div>
-</form>
+<h3>{{ profile.user_info[0].cohort }}</h3>
+<div>
+  <span>{{ profile.user_info[0].firstname }} </span><span>{{ profile.user_info[0].lastname }}</span>
+  <p>{{ profile.user_info[0].image }} This is the image</p>
+  <p>{{ profile.user_info[0].personalsummary }}</p>
+</div>
+
+<div>
+  <p>{{ profile.user_info[0].title }}</p>
+  <p>{{ profile.user_info[0].user_location }}</p>
+  <p>{{ profile.user_info[0].facts }}</p>
+</div>

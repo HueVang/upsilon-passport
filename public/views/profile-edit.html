@@ -14,27 +14,25 @@
 <p>
   This is where the user profile will be.
 </p>
-<div ng-repeat="cohort in profile.cohorts">
-  <p>{{ cohort }}</p>
-</div>
+
 
 
 
 <form>
   <div class="col-sm-4">
-    <input placeholder="First Name" type="text" ng-model="profile.user_info.firstName"/>
-    <input placeholder="Last Name" type="text" ng-model="profile.user_info.lastName"/>
-    <textarea class="form-control" placeholder="Personal Summary" type="text" ng-model="profile.user_info.personalSummary"></textarea>
+    <input placeholder="First Name" type="text" value="" ng-model="profile.user_info[0].firstname"/>
+    <input placeholder="Last Name" type="text" ng-model="profile.user_info[0].lastname"/>
+    <textarea class="form-control" placeholder="Personal Summary" type="text" ng-model="profile.user_info[0].personalsummary"></textarea>
   </div>
   <div class="col-sm-4">
-    <select ng-model="profile.user_info.cohort">
+    <select ng-model="profile.user_info[0].cohort">
       <option ng-repeat="cohort in profile.cohorts" value="{{cohort.cohort_name}}">{{ cohort.cohort_name }}</option>
     </select>
-    <input placeholder="Job Title/Headline" type="text" ng-model="profile.user_info.title"/>
-    <input placeholder="Location" type="text" ng-model="profile.user_info.location_name"/>
-    <input placeholder="Fun Fact(s)" type="text" ng-model="profile.user_info.facts"/>
+    <input placeholder="Job Title/Headline" type="text" ng-model="profile.user_info[0].title"/>
+    <input placeholder="Location" type="text" ng-model="profile.user_info[0].location_name"/>
+    <input placeholder="Fun Fact(s)" type="text" ng-model="profile.user_info[0].facts"/>
     <div class="btn-group">
-      <button class="btn-success" ng-click="profile.saveChanges(profile.user_info)">Save Changes</button>
+      <button class="btn-success" ng-click="profile.saveChanges(profile.user_info[0])">Save Changes</button>
       <button class="btn-danger" ng-click="profile.cancel()">Cancel</button>
     </div>
   </div>
