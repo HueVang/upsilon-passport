@@ -29,7 +29,7 @@
       <option ng-repeat="cohort in profile.cohorts" value="{{cohort.cohort_name}}">{{ cohort.cohort_name }}</option>
     </select>
     <input placeholder="Job Title/Headline" type="text" ng-model="profile.user_info[0].title"/>
-    <input placeholder="Location" type="text" ng-model="profile.user_info[0].location_name"/>
+    <input placeholder="Location" type="text" ng-model="profile.user_info[0].user_location"/>
     <input placeholder="Fun Fact(s)" type="text" ng-model="profile.user_info[0].facts"/>
     <div class="btn-group">
       <button class="btn-success" ng-click="profile.saveChanges(profile.user_info[0])">Save Changes</button>

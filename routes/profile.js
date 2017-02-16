@@ -68,7 +68,7 @@ router.post('/post',function(req,res){
      client.query(
        'UPDATE users SET firstname=$2, lastname=$3, image=$4, personalsummary=$5, cohort=$6, title=$7, user_location=$8, facts=$9 WHERE id=$1 RETURNING *;',
       [req.user.id,req.body.firstname, req.body.lastname, req.body.image, req.body.personalsummary,
-       req.body.cohort, req.body.title, req.body.location_name, req.body.facts],
+       req.body.cohort, req.body.title, req.body.user_location, req.body.facts],
       function(err,result){
         done();
         if(err){

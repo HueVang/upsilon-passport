@@ -8,7 +8,7 @@ angular.module('soloApp').controller('ProfileController', function($http, $locat
   "personalsummary" : "",
   "cohort" : "",
   "title" : "",
-  "location_name" : "",
+  "user_location" : "",
   "facts" : ""
 }];
 
