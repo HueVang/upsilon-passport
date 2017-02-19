@@ -20,7 +20,13 @@
 <h3>{{ profile.user_info[0].cohort }}</h3>
 <div>
   <span>{{ profile.user_info[0].firstname }} </span><span>{{ profile.user_info[0].lastname }}</span>
-  <p>{{ profile.user_info[0].image }} This is the image</p>
+  <br />
+  <img ng-src="/uploads/{{ profile.user_info[0].username }}.jpg" alt="Picture"/>
+  <p>New Form</p>
+  <form action="/profile/image" method="post" enctype="multipart/form-data">
+    <input type="file" name="{{ profile.user_info[0].username }}"/>
+    <input type="submit" name="submit" value="submit"/>
+  </form>
   <p>{{ profile.user_info[0].personalsummary }}</p>
 </div>
 

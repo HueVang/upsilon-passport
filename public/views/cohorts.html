@@ -7,10 +7,51 @@
     <ul class="nav navbar-nav">
       <li><a href="/cohorts">Cohorts</a></li>
       <li><a href="/profile">Profile</a></li>
-      <li><button class="btn btn-danger navbar-btn" ng-click="cohorts.logout()" >Logout</button></li>
+      <li><button class="btn btn-danger navbar-btn" ng-click="vm.logout()" >Logout</button></li>
     </ul>
   </div>
 </nav>
 <p>
   This is where the cohorts will be for logged in users.
 </p>
+
+<select ng-model="cohortName" ng-change="vm.getCohort(cohortName)" >
+  <option ng-repeat="cohort in vm.cohorts" value="{{cohort.cohort_name}}">{{ cohort.cohort_name }}</option>
+</select>
+<br />
+
+<div ng-repeat="user in vm.cohort" class="profile">
+  <div>
+    <img ng-src="/uploads/{{ user.username }}.jpg" alt="Picture"/>
+  </div>
+</div>
+
+<!-- <div ng-repeat="user in vm.cohort" class="profile">
+  <div>
+    <img ng-src="/uploads/{{ user.username }}.jpg" alt="Picture"/>
+  </div>
+  <p>
+    {{ user.firstname}} {{ user.lastname }}
+  </p>
+  <p>
+    {{ user.personalsummary }}
+  </p>
+  <p>
+    {{ user.cohort}} {{ user.title }} {{ user.facts }} {{ user.location }}
+  </p>
+</div> -->
+
+<!-- <div ng-repeat="user in vm.users" >
+  <div>
+    <img ng-src="/uploads/{{ user.username }}.jpg" alt="Picture"/>
+  </div>
+  <p>
+    {{ user.firstname}} {{ user.lastname }}
+  </p>
+  <p>
+    {{ user.personalsummary }}
+  </p>
+  <p>
+    {{ user.cohort}} {{ user.title }} {{ user.facts }} {{ user.location }}
+  </p>
+</div> -->

@@ -3,11 +3,15 @@ var bodyParser = require('body-parser');
 var path = require('path');
 var session = require('express-session');
 var passport = require('passport');
+var config = {database : 'passport'};
+var multer = require('multer');
+var upload = multer({dest: 'uploads/'})
 
 var connection = require('./db/connection');
 var login = require('./routes/login');
 var register = require('./routes/register');
 var profile = require('./routes/profile');
+var cohorts = require('./routes/cohorts');
 
 require('./auth/setup');
 
@@ -39,6 +43,7 @@ app.get('/loginStatus', function(req, res){
   res.send(req.isAuthenticated());
 })
 app.use('/profile', profile);
+app.use('/cohorts', cohorts);
 
 // the following routes require authentication
 app.use('/private', ensureAuthenticated);
@@ -60,6 +65,8 @@ function ensureAuthenticated(req, res, next) {
 app.get('/*', function(req, res){
   res.sendFile(path.join(__dirname, 'public/views/index.html'));
 });
+
+
 
 var server = app.listen(3000, function() {
   console.log('Listening on port', server.address().port);

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html ng-app="soloApp" ng-controller="ProfileController as profile">
+  <head>
+    <meta charset="utf-8">
+    <title>Cohort Tracker</title>
+
+    <link rel="stylesheet" href="vendors/bootstrap.min.css" media="screen" title="no title">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="vendors/angular.min.js" charset="utf-8"></script>
+    <script src="vendors/angular-route.min.js" charset="utf-8"></script>
+
+    <script src="scripts/app.module.js" charset="utf-8"></script>
+    <script src="scripts/login.controller.js" charset="utf-8"></script>
+    <script src="scripts/app.config.js" charset="utf-8"></script>
+    <script src="scripts/register.controller.js" charset="utf-8"></script>
+    <script src="scripts/home.controller.js" charset="utf-8"></script>
+    <script src="scripts/auth.service.js" charset="utf-8"></script>
+    <script src="scripts/cohorts-guest.controller.js" charset="utf-8"></script>
+    <script src="scripts/cohorts.controller.js" charset="utf-8"></script>
+    <script src="scripts/home-guest.controller.js" charset="utf-8"></script>
+    <script src="scripts/profile.controller.js" charset="utf-8"></script>
+    <base href="/profile-edit" />
+  </head>
+
+  <body>
+    <h2>Create Profile</h2>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/home">Home</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="/cohorts">Cohorts</a></li>
+          <li><a href="/profile">Profile</a></li>
+          <li><button class="btn btn-danger navbar-btn" ng-click="profile.logout()" >Logout</button></li>
+        </ul>
+      </div>
+    </nav>
+    <p>
+      This is where the user profile will be.
+    </p>
+
+
+    <!-- <form action="/" enctype="multipart/form-data" method="post" onsubmit="event.preventDefault()">
+        <input type="file" name="{{ profile.user_info[0].username }}" multiple>
+        <input type="submit" value="Upload">
+    </form> -->
+
+    <form action="/" enctype="multipart/form-data"  method="post">
+        <input type="file" name="{{ profile.user_info[0].username }}" />
+        <input type="submit" value="Upload" ng-click="profile.test()"/>
+    </form>
+    <img src="/uploads/{{ profile.user_info[0].username }}.jpg" alt="Picture">
+
+
+
+    <form>
+      <div class="col-sm-4">
+        <input placeholder="First Name" type="text" value="" ng-model="profile.user_info[0].firstname"/>
+        <input placeholder="Last Name" type="text" ng-model="profile.user_info[0].lastname"/>
+        <textarea class="form-control" placeholder="Personal Summary" type="text" ng-model="profile.user_info[0].personalsummary"></textarea>
+      </div>
+      <div class="col-sm-4">
+        <select ng-model="profile.user_info[0].cohort">
+          <option ng-repeat="cohort in profile.cohorts" value="{{cohort.cohort_name}}">{{ cohort.cohort_name }}</option>
+        </select>
+        <input placeholder="Job Title/Headline" type="text" ng-model="profile.user_info[0].title"/>
+        <input placeholder="Location" type="text" ng-model="profile.user_info[0].user_location"/>
+        <input placeholder="Fun Fact(s)" type="text" ng-model="profile.user_info[0].facts"/>
+        <div class="btn-group">
+          <button class="btn-success" ng-click="profile.saveChanges(profile.user_info[0])">Save Changes</button>
+          <button class="btn-danger" ng-click="profile.cancel()">Cancel</button>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

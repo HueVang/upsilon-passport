@@ -20,11 +20,13 @@ angular
       })
       .when("/profile-edit", {
         templateUrl: "views/profile-edit.html",
-        controller: "ProfileController as profile"
+        controller: "ProfileController as profile",
+        authRequired: true
       })
       .when("/profile" , {
         templateUrl: "views/profile.html",
-        controller: "ProfileController as profile"
+        controller: "ProfileController as profile",
+        authRequired: true
       })
       .when("/cohorts-guest", {
         templateUrl: "views/cohorts-guest.html",
@@ -32,7 +34,7 @@ angular
       })
       .when("/cohorts", {
         templateUrl: "views/cohorts.html",
-        controller: "CohortsController as cohorts",
+        controller: "CohortsController as vm",
         authRequired: true
       })
       .otherwise({

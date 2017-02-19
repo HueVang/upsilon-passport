@@ -16,6 +16,18 @@
 </p>
 
 
+<!-- <form action="/" enctype="multipart/form-data" method="post" onsubmit="event.preventDefault()">
+    <input type="file" name="{{ profile.user_info[0].username }}" multiple>
+    <input type="submit" value="Upload">
+</form> -->
+
+<!-- <form action="/" enctype="multipart/form-data"  method="post">
+    <input type="file" name="{{ profile.user_info[0].username }}" />
+    <input type="submit" value="Upload" ng-click="profile.test()"/>
+</form>
+<img ng-src="{{ profile.user_info[0].image }}" alt="Picture"/> -->
+
+<img ng-src="/uploads/{{ profile.user_info[0].username }}.jpg" alt="Picture"/>
 
 
 <form>
