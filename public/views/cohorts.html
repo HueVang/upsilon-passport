@@ -20,11 +20,28 @@
 </select>
 <br />
 
-<div ng-repeat="user in vm.cohort" class="profile">
-  <div>
-    <img ng-src="/uploads/{{ user.username }}.jpg" alt="Picture"/>
-  </div>
-</div>
+<ul rn-carousel rn-carousel-controls rn-carousel-buffered rn-carousel-index="carouselIndex" rn-carousel-controls-allow-loop rn-carousel-transition="hexagon">
+  <li  ng-repeat="user in vm.cohort">
+    <div class="profile">
+      <div>
+        <img ng-src="/uploads/{{ user.username }}.jpg" alt="Picture"/>
+      </div>
+    </div>
+  </li>
+</ul>
+
+<!-- <ul rn-carousel class="image">
+  <li>Slide 1</li>
+  <li>Slide 2</li>
+  <li>Slide 3</li>
+</ul> -->
+
+<ul>
+  <li>Slide 1</li>
+  <li>Slide 2</li>
+  <li>Slide 3</li>
+</ul>
+
 
 <!-- <div ng-repeat="user in vm.cohort" class="profile">
   <div>

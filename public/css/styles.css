@@ -1,7 +1,7 @@
 /* styles */
-ul {
+/*ul {
   list-style: none;
-}
+}*/
 
 img {
   max-height: 300px;
@@ -15,4 +15,13 @@ img {
 
 .profile {
   display: inline-block;
+  filter: grayscale(100%);
+}
+
+.profile:hover {
+  filter: none;
+}
+
+.red {
+  background-color: red;
 }

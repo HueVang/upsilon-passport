@@ -7,6 +7,7 @@ var config = {database : 'passport'};
 var multer = require('multer');
 var upload = multer({dest: 'uploads/'})
 
+
 var connection = require('./db/connection');
 var login = require('./routes/login');
 var register = require('./routes/register');

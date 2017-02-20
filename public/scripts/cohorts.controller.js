@@ -2,6 +2,7 @@ angular.module('soloApp').controller('CohortsController', function($http, $locat
   console.log('CohortsController loaded');
 
   var ctrl = this;
+  ctrl.cohort = [];
 
   ctrl.getCohorts = function() {
      $http.get('/cohorts/cohorts').then(function(response) {
