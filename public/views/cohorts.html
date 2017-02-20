@@ -20,7 +20,7 @@
 </select>
 <br />
 
-<ul rn-carousel rn-carousel-controls rn-carousel-buffered rn-carousel-index="carouselIndex" rn-carousel-controls-allow-loop rn-carousel-transition="hexagon">
+<ul rn-carousel rn-carousel-buffered rn-carousel-index="carouselIndex" rn-carousel-controls rn-carousel-transition="hexagon">
   <li  ng-repeat="user in vm.cohort">
     <div class="profile">
       <div>
@@ -29,6 +29,7 @@
     </div>
   </li>
 </ul>
+<div rn-carousel-indicators rn-carousel-index="carouselIndex" ng-if="vm.cohort.length > 1" slides="vm.cohort"></div>
 
 <!-- <ul rn-carousel class="image">
   <li>Slide 1</li>
