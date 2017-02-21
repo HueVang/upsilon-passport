@@ -1,7 +1,7 @@
 /* styles */
-/*ul {
+ul {
   list-style: none;
-}*/
+}
 
 img {
   max-height: 300px;
@@ -11,7 +11,12 @@ img {
 
 /*div {
   display: inline-block;
+  margin: 0 auto;
 }*/
+
+p {
+  text-align: center;
+}
 
 .profile {
   display: inline-block;
@@ -24,4 +29,17 @@ img {
 
 .red {
   background-color: red;
+}
+
+.middle {
+  display: block;
+  margin: 0 auto;
+  position: relative;
+}
+
+.center {
+  margin: 0 auto;
+  /*background-color: teal;*/
+  width: 100%;
+  text-align: center;
 }

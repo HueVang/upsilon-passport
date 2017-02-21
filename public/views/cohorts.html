@@ -15,34 +15,30 @@
   This is where the cohorts will be for logged in users.
 </p>
 
-<select ng-model="cohortName" ng-change="vm.getCohort(cohortName)" >
-  <option ng-repeat="cohort in vm.cohorts" value="{{cohort.cohort_name}}">{{ cohort.cohort_name }}</option>
-</select>
+<div class="center">
+  <select class="middle" ng-model="cohortName" ng-change="vm.getCohort(cohortName)" >
+    <option ng-repeat="cohort in vm.cohorts" value="{{cohort.cohort_name}}">{{ cohort.cohort_name }}</option>
+  </select>
+</div>
+
 <br />
 
-<ul rn-carousel rn-carousel-buffered rn-carousel-index="carouselIndex" rn-carousel-controls rn-carousel-transition="hexagon">
+<ul rn-carousel rn-carousel-buffered rn-carousel-index="carouselIndex" rn-carousel-controls rn-carousel-easing="easeInOutSine" rn-carousel-transition="hexagon">
   <li  ng-repeat="user in vm.cohort">
     <div class="profile">
       <div>
         <img ng-src="/uploads/{{ user.username }}.jpg" alt="Picture"/>
       </div>
+      <div class="middle">
+        <p> {{ user.firstname }} {{ user.lastname }}</p>
+      </div>
     </div>
   </li>
 </ul>
-<div rn-carousel-indicators rn-carousel-index="carouselIndex" ng-if="vm.cohort.length > 1" slides="vm.cohort"></div>
+<br />
+<div rn-carousel-indicators rn-carousel-index="carouselIndex" ng-if="vm.cohort.length > 1" slides="vm.cohort" class="center"></div>
 
-<!-- <ul rn-carousel class="image">
-  <li>Slide 1</li>
-  <li>Slide 2</li>
-  <li>Slide 3</li>
-</ul> -->
-
-<ul>
-  <li>Slide 1</li>
-  <li>Slide 2</li>
-  <li>Slide 3</li>
-</ul>
-
+<button class="btn" ng-click="open()">Open me!</button>
 
 <!-- <div ng-repeat="user in vm.cohort" class="profile">
   <div>

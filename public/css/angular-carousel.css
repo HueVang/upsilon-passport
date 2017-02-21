@@ -2,6 +2,7 @@ input[type=range] {
   width: 300px; }
 
 ul[rn-carousel] {
+  margin: 0 auto;
   overflow: hidden;
   height: 300px;
   width: 300px;
