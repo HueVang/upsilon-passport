@@ -4,6 +4,18 @@ angular.module('soloApp').controller('CohortsController', function($http, $locat
   var ctrl = this;
   ctrl.cohort = [];
 
+  ctrl.showProfile = function(id) {
+    console.log('This is the user id: ', 'user_' + id);
+    console.log('showProfile works when clicked!');
+
+    var el = document.getElementById(id);
+
+  //  el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
+  }; // end showProfile
+
+
+
+
   ctrl.getCohorts = function() {
      $http.get('/cohorts/cohorts').then(function(response) {
       ctrl.cohorts = response.data;

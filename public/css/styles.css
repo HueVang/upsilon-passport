@@ -1,4 +1,12 @@
 /* styles */
+.container {
+  width: 100%%;
+}
+
+html {
+  overflow-x: hidden;
+}
+
 ul {
   list-style: none;
 }
@@ -16,6 +24,16 @@ img {
 
 p {
   text-align: center;
+}
+
+/*div[id^=user_] {
+  background-color: blue;
+  display: hidden;
+}*/
+
+
+.feat {
+
 }
 
 .profile {
@@ -42,4 +60,9 @@ p {
   /*background-color: teal;*/
   width: 100%;
   text-align: center;
+}
+
+#index-bar {
+    z-index: 10;
+    position: absolute;
 }
