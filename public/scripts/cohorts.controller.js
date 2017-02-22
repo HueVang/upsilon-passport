@@ -58,4 +58,5 @@ angular.module('soloApp').controller('CohortsController', function($http, $locat
   }
 
 
+
 }); // end CohortsController

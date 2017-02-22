@@ -68,4 +68,6 @@ angular.module('soloApp').controller('ProfileController', function($http, $locat
     });
   }
 
+
+
 }); // end ProfileController

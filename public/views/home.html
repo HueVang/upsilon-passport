@@ -12,3 +12,9 @@
   </div>
 </nav>
 <p>You are logged in and on the home page!</p>
+
+<div class="profile col-xs-offset-2 col-sm-offset-1 col-md-offset-2 col-md-offset-2 avatar" ng-repeat="person in home.random" ng-animate="{enter: 'animate-enter', leave: 'animate-leave'}">
+  <img class="feat" ng-src="/uploads/{{ person }}.jpg" alt="Picture"/>
+</div>
+
+<p>This is the summary of what the application is and what features it contains.</p>

@@ -21,11 +21,13 @@
   </select>
 </div>
 
+
+
 <br />
 
 <ul rn-carousel rn-carousel-buffered rn-carousel-index="carouselIndex" rn-carousel-controls rn-carousel-easing="easeInOutSine" rn-carousel-transition="hexagon">
   <li ng-repeat="user in vm.cohort">
-    <button class="feat" data-toggle="modal" data-target="#{{user.firstname}}">
+    <button id="clickModal" data-toggle="modal" data-target="#{{user.firstname}}">
 
 
     <!-- Modal -->
@@ -59,11 +61,15 @@
 </ul>
 <br />
 
+<div rn-carousel-indicators rn-carousel-index="carouselIndex" ng-if="vm.cohort.length > 1" slides="vm.cohort" id="index-bar"></div>
+
 <div ng-repeat="user in vm.cohort">
   <!-- Button trigger modal -->
   <!-- <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#{{user.firstname}}">
     Launch demo modal
   </button> -->
+
+
 
   <!-- Modal -->
   <div class="modal fade" id="{{user.firstname}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -74,22 +80,24 @@
           <h4 class="modal-title" id="myModalLabel">{{ user.username }}</h4>
         </div>
         <div class="modal-body">
-          <p>{{ user.firstname }} {{ user.lastname }}</p>
+          <p>Name: {{ user.firstname }} {{ user.lastname }}</p>
           <img ng-src="/uploads/{{ user.username }}.jpg" alt="Picture"/>
+          <p>Summary: </p>
+
           <p>{{ user.personalsummary }}</p>
+          <p>Location: </p>
+
           <p>{{ user.user_location }}</p>
+          <p>Title: </p>
           <p>{{ user.title }}</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-<div rn-carousel-indicators rn-carousel-index="carouselIndex" ng-if="vm.cohort.length > 1" slides="vm.cohort" id="index-bar" class="center"></div>
 
 
 

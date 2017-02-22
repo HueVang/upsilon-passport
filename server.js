@@ -13,6 +13,7 @@ var login = require('./routes/login');
 var register = require('./routes/register');
 var profile = require('./routes/profile');
 var cohorts = require('./routes/cohorts');
+var home = require('./routes/home');
 
 require('./auth/setup');
 
@@ -45,6 +46,7 @@ app.get('/loginStatus', function(req, res){
 })
 app.use('/profile', profile);
 app.use('/cohorts', cohorts);
+app.use('/home', home);
 
 // the following routes require authentication
 app.use('/private', ensureAuthenticated);
