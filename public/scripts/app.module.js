@@ -1,1 +1,1 @@
-angular.module('soloApp', ['ngRoute', 'angular-carousel']);
+angular.module('soloApp', ['ngRoute' ,'angular-carousel']);
