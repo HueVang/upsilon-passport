@@ -15,4 +15,17 @@ angular.module('soloApp').controller('RegisterController', function($http, $loca
       console.log('error registering new user', error);
     });
   };
+
+  ctrl.login = function() {
+    console.log('logging in');
+    $http.post('/login', {
+      username: ctrl.username,
+      password: ctrl.password
+    }).then(function(response){
+      console.log(response);
+      $location.path('/home');
+    }, function(error) {
+      console.log('error logging in', error);
+    });
+  };
 });

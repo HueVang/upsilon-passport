@@ -17,4 +17,5 @@ function LoginController($http, $location) {
       console.log('error logging in', error);
     });
   };
+
 }

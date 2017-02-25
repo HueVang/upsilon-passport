@@ -62,10 +62,7 @@ angular.module('soloApp').controller('HomeController', function($http, $location
   //     ctrl.random = [username, username, username];
   // };
 
-window.setInterval(ctrl.getUsers, 4000);
-
-
-
+window.setInterval(ctrl.getUsers, 20000);
 
 
 });
