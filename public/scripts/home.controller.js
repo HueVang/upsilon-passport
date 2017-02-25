@@ -12,6 +12,22 @@ angular.module('soloApp').controller('HomeController', function($http, $location
     });
   }
 
+  ctrl.profilePage = function() {
+    $location.path('/profile');
+  }
+
+  ctrl.getUserInfo = function() {
+    $http.get('/profile/userinfo').then(function(response) {
+      ctrl.user_info = response.data;
+      console.log('This is the user info: ', response.data);
+      console.log('This is ctrl.user_info:', ctrl.user_info);
+    }).catch(function(err) {
+      console.log('error getting response from the user :', err);
+    });
+  }; // end getUserInfo function
+
+  ctrl.getUserInfo();
+
   ctrl.getUsers = function() {
      $http.get('/home/usernames').then(function(response) {
       ctrl.usernames = response.data;
@@ -27,7 +43,12 @@ angular.module('soloApp').controller('HomeController', function($http, $location
       // console.log('This is the usernames array : ', ctrl.usernames);
       var random3 = Math.floor(Math.random()*ctrl.usernames.length);
       var username3 = ctrl.usernames.splice(random3, 1)[0].username;
+      // console.log('This is the usernames array : ', ctrl.usernames);
+      // var random4 = Math.floor(Math.random()*ctrl.usernames.length);
+      // var username4 = ctrl.usernames.splice(random4, 1)[0].username;
       ctrl.random = [username, username2, username3];
+      // ctrl.random = [username, username2, username3, username4];
+
 
       console.log('This is the random array : ', ctrl.random);
     }).catch(function(err) {
@@ -41,7 +62,7 @@ angular.module('soloApp').controller('HomeController', function($http, $location
   //     ctrl.random = [username, username, username];
   // };
 
-window.setInterval(ctrl.getUsers, 10000);
+window.setInterval(ctrl.getUsers, 4000);
 
 
 

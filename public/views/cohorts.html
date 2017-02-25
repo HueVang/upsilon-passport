@@ -1,16 +1,40 @@
 <h2>Cohorts</h2>
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/home">Home</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li><a href="/cohorts">Cohorts</a></li>
-      <li><a href="/profile">Profile</a></li>
-      <li><button class="btn btn-danger navbar-btn" ng-click="vm.logout()" >Logout</button></li>
+<nav>
+  <div id="navDiv">
+    <ul class="navItems">
+      <li>
+        <div>
+          <a class="navbar-brand select" href="/home">Home</a>
+          <div class="arrow-up"></div>
+          </div>
+      </li>
+      <li>
+        <div>
+          <a class="navbar-brand select" href="/cohorts">Cohorts</a>
+          <div class="arrow-up see-this"></div>
+        </div>
+      </li>
+      <li>
+        <div>
+          <a class="navbar-brand select" href="/profile">Profile</a>
+          <div class="arrow-up"></div>
+        </div>
+      </li>
     </ul>
   </div>
+  <div id="fixedDiv">
+    <div ng-click="vm.profilePage()">
+      <span>{{ vm.user_info[0].firstname }}</span>
+      <span>
+        <div id="smallPic">
+          <img ng-src="/uploads/{{ vm.user_info[0].username }}.jpg" alt="Picture"/>
+        </div>
+      </span>
+    </div>
+    <button id="logoutButton" ng-click="vm.logout()">Logout</button>
+  </div>
 </nav>
+
 <p>
   This is where the cohorts will be for logged in users.
 </p>
@@ -28,9 +52,6 @@
 <ul rn-carousel rn-carousel-buffered rn-carousel-index="carouselIndex" rn-carousel-controls rn-carousel-easing="easeInOutSine" rn-carousel-transition="hexagon">
   <li ng-repeat="user in vm.cohort">
     <button id="clickModal" data-toggle="modal" data-target="#{{user.firstname}}">
-
-
-    <!-- Modal -->
     <div class="profile">
       <div id="user_{{ user.username }}" ng-click="vm.showProfile(user.username)">
         <img ng-src="/uploads/{{ user.username }}.jpg" alt="Picture"/>
@@ -40,23 +61,6 @@
       </div>
     </div>
     </button>
-    <!-- <div class="modal fade" id="{{ user.username }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-          </div>
-          <div class="modal-body">
-            ...
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
-        </div>
-      </div>
-    </div> -->
   </li>
 </ul>
 <br />
@@ -64,15 +68,9 @@
 <div rn-carousel-indicators rn-carousel-index="carouselIndex" ng-if="vm.cohort.length > 1" slides="vm.cohort" id="index-bar"></div>
 
 <div ng-repeat="user in vm.cohort">
-  <!-- Button trigger modal -->
-  <!-- <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#{{user.firstname}}">
-    Launch demo modal
-  </button> -->
-
-
 
   <!-- Modal -->
-  <div class="modal fade" id="{{user.firstname}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal fade modalStyle" id="{{user.firstname}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -98,60 +96,3 @@
     </div>
   </div>
 </div>
-
-
-
-<!-- Button trigger modal
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  Launch demo modal
-</button>
-
-Modal
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div> -->
-
-
-<!-- <div ng-repeat="user in vm.cohort" class="profile">
-  <div>
-    <img ng-src="/uploads/{{ user.username }}.jpg" alt="Picture"/>
-  </div>
-  <p>
-    {{ user.firstname}} {{ user.lastname }}
-  </p>
-  <p>
-    {{ user.personalsummary }}
-  </p>
-  <p>
-    {{ user.cohort}} {{ user.title }} {{ user.facts }} {{ user.location }}
-  </p>
-</div> -->
-
-<!-- <div ng-repeat="user in vm.users" >
-  <div>
-    <img ng-src="/uploads/{{ user.username }}.jpg" alt="Picture"/>
-  </div>
-  <p>
-    {{ user.firstname}} {{ user.lastname }}
-  </p>
-  <p>
-    {{ user.personalsummary }}
-  </p>
-  <p>
-    {{ user.cohort}} {{ user.title }} {{ user.facts }} {{ user.location }}
-  </p>
-</div> -->

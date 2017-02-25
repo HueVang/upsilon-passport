@@ -14,6 +14,17 @@ angular.module('soloApp').controller('CohortsController', function($http, $locat
   }; // end showProfile
 
 
+  ctrl.getUserInfo = function() {
+    $http.get('/profile/userinfo').then(function(response) {
+      ctrl.user_info = response.data;
+      console.log('This is the user info: ', response.data);
+      console.log('This is ctrl.user_info:', ctrl.user_info);
+    }).catch(function(err) {
+      console.log('error getting response from the user :', err);
+    });
+  }; // end getUserInfo function
+
+  ctrl.getUserInfo();
 
 
   ctrl.getCohorts = function() {
@@ -47,6 +58,10 @@ angular.module('soloApp').controller('CohortsController', function($http, $locat
   }; // end getUsers function
 
   ctrl.getUsers();
+
+  ctrl.profilePage = function() {
+    $location.path('/profile');
+  }
 
   ctrl.logout = function() {
     $http.delete('/login').then(function(){
