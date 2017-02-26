@@ -10,8 +10,8 @@
       </li>
       <li>
         <div>
-        <a class="navbar-brand select" href="/cohorts">Cohorts</a>
-        <div class="arrow-up"></div>
+          <a class="navbar-brand select" href="/cohorts">Cohorts</a>
+          <div class="arrow-up"></div>
         </div>
       </li>
       <li>
@@ -35,19 +35,17 @@
     <button id="logoutButton" class="btn btn-danger"ng-click="profile.logout()">Logout</button>
   </div>
 </nav>
-<p>
-  This is where the user profile will be.
-</p>
+
 
 
 <!-- <form action="/" enctype="multipart/form-data" method="post" onsubmit="event.preventDefault()">
-    <input type="file" name="{{ profile.user_info[0].username }}" multiple>
-    <input type="submit" value="Upload">
+<input type="file" name="{{ profile.user_info[0].username }}" multiple>
+<input type="submit" value="Upload">
 </form> -->
 
 <!-- <form action="/" enctype="multipart/form-data"  method="post">
-    <input type="file" name="{{ profile.user_info[0].username }}" />
-    <input type="submit" value="Upload" ng-click="profile.test()"/>
+<input type="file" name="{{ profile.user_info[0].username }}" />
+<input type="submit" value="Upload" ng-click="profile.test()"/>
 </form>
 <img ng-src="{{ profile.user_info[0].image }}" alt="Picture"/> -->
 
@@ -55,63 +53,78 @@
 
 
 <form>
-  <div class="col-sm-4">
-    <input placeholder="First Name" type="text" value="" ng-model="profile.user_info[0].firstname"/>
-    <input placeholder="Last Name" type="text" ng-model="profile.user_info[0].lastname"/>
-    <textarea class="form-control" placeholder="Personal Summary" type="text" ng-model="profile.user_info[0].personalsummary"></textarea>
-  </div>
-  <div class="col-sm-4">
-    <select ng-model="profile.user_info[0].cohort">
-      <option ng-repeat="cohort in profile.cohorts" value="{{cohort.cohort_name}}">{{ cohort.cohort_name }}</option>
-    </select>
-    <input placeholder="Job Title/Headline" type="text" ng-model="profile.user_info[0].title"/>
-    <input placeholder="Location" type="text" ng-model="profile.user_info[0].user_location"/>
-    <input placeholder="Fun Fact(s)" type="text" ng-model="profile.user_info[0].facts"/>
-    <input placeholder="Github URL" type="text" ng-model="profile.user_info[0].github"/>
-    <input placeholder="LinkedIn URL" type="text" ng-model="profile.user_info[0].linkedin"/>
-    <div class="btn-group">
-      <button class="btn-success" ng-click="profile.saveChanges(profile.user_info[0])">Save Changes</button>
-      <button class="btn-danger" ng-click="profile.cancel()">Cancel</button>
-    </div>
-  </div>
+<div class="col-sm-4">
+<input placeholder="First Name" type="text" value="" ng-model="profile.user_info[0].firstname"/>
+<input placeholder="Last Name" type="text" ng-model="profile.user_info[0].lastname"/>
+<textarea class="form-control" placeholder="Personal Summary" type="text" ng-model="profile.user_info[0].personalsummary"></textarea>
+</div>
+<div class="col-sm-4">
+<select ng-model="profile.user_info[0].cohort">
+<option ng-repeat="cohort in profile.cohorts" value="{{cohort.cohort_name}}">{{ cohort.cohort_name }}</option>
+</select>
+<input placeholder="Job Title/Headline" type="text" ng-model="profile.user_info[0].title"/>
+<input placeholder="Location" type="text" ng-model="profile.user_info[0].user_location"/>
+<input placeholder="Fun Fact(s)" type="text" ng-model="profile.user_info[0].facts"/>
+<input placeholder="Github URL" type="text" ng-model="profile.user_info[0].github"/>
+<input placeholder="LinkedIn URL" type="text" ng-model="profile.user_info[0].linkedin"/>
+<div class="btn-group">
+<button class="btn-success" ng-click="profile.saveChanges(profile.user_info[0])">Save Changes</button>
+<button class="btn-danger" ng-click="profile.cancel()">Cancel</button>
+</div>
+</div>
 </form> -->
 
 
 
-<div id="profile-div">
+<div class="padding" id="profile-div">
   <div>
-  <form>
+
     <div class="profile-info">
-      <div class="frame">
-        <div class="drop-down">
+      <form>
+        <div class="frame">
           <select id="dropdown" ng-model="profile.user_info[0].cohort">
             <option ng-repeat="cohort in profile.cohorts" value="{{cohort.cohort_name}}">{{ cohort.cohort_name }}</option>
           </select>
+          <img id="editImage" class="avatar" ng-src="/uploads/{{ profile.user_info[0].username }}.jpg" alt="Picture"/>
+          <div>
+            <!-- <label>First Name</label> -->
+            <input class="profileInput" placeholder="First Name" type="text" value="" ng-model="profile.user_info[0].firstname"/>
+          </div>
+          <!-- <div> -->
+            <!-- <label>Last Name</label> -->
+            <input class="profileInput" placeholder="Last Name" type="text" ng-model="profile.user_info[0].lastname"/>
+          <!-- </div> -->
+          <!-- <div> -->
+            <!-- <label>Job Title/Headline</label> -->
+            <input id="jobInput" class="profileInput" placeholder="Job Title/Headline" type="text" ng-model="profile.user_info[0].title"/>
+          <!-- </div> -->
+          <!-- <div> -->
+            <!-- <label id="locationLabel">Location</label> -->
+            <input id="locationInput" class="profileInput" placeholder="Location" type="text" ng-model="profile.user_info[0].user_location"/>
+          <!-- </div> -->
+          <!-- <div> -->
+            <!-- <label id="factsLabel">Fun Facts</label> -->
+            <input class="profileInput" placeholder="Fun Fact(s)" type="text" ng-model="profile.user_info[0].facts"/>
+          <!-- </div> -->
+          <div>
+            <!-- <label>Github</label> -->
+            <input class="profileInput" placeholder="Github URL" type="text" ng-model="profile.user_info[0].github"/>
+            <!-- <label>Linkedin</label> -->
+            <input class="profileInput" placeholder="LinkedIn URL" type="text" ng-model="profile.user_info[0].linkedin"/>
+          </div>
         </div>
-
-        <input placeholder="First Name" type="text" value="" ng-model="profile.user_info[0].firstname"/>
-        <input placeholder="Last Name" type="text" ng-model="profile.user_info[0].lastname"/>
-        <img id="editImage" class="avatar" ng-src="/uploads/{{ profile.user_info[0].username }}.jpg" alt="Picture"/>
-        <form id="upload" action="/profile/image" method="post" enctype="multipart/form-data">
-          <input type="file" name="{{ profile.user_info[0].username }}"/>
-          <input type="submit" name="submit" value="submit"/>
-        </form>
-      </div>
-      <div id="editFields">
-
-
-          <textarea class="form-control" placeholder="Personal Summary" type="text" ng-model="profile.user_info[0].personalsummary"></textarea>
-          <input placeholder="Job Title/Headline" type="text" ng-model="profile.user_info[0].title"/>
-          <input placeholder="Location" type="text" ng-model="profile.user_info[0].user_location"/>
-          <input placeholder="Fun Fact(s)" type="text" ng-model="profile.user_info[0].facts"/>
-          <input placeholder="Github URL" type="text" ng-model="profile.user_info[0].github"/>
-          <input placeholder="LinkedIn URL" type="text" ng-model="profile.user_info[0].linkedin"/>
-          <div id="editButtons" align="center" class="btn-group">
+        <!-- <div id="editFields"> -->
+          <div id="summaryDiv">
+            <textarea id="summaryInput" class="form-control" placeholder="Personal Summary" type="text" ng-model="profile.user_info[0].personalsummary"></textarea>
+          </div>
+          <div id="editButtons" align="left" class="">
             <button class="btn btn-success" ng-click="profile.saveChanges(profile.user_info[0])">Save Changes</button>
             <button class="btn btn-danger" ng-click="profile.cancel()">Cancel</button>
           </div>
-      </div>
+        <!-- </div> -->
+
+      </form>
     </div>
-  </form>
+
   </div>
 </div>

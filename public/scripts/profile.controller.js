@@ -16,7 +16,9 @@ angular.module('soloApp').controller('ProfileController', function($http, $locat
 
   console.log('This is user info object: ', ctrl.user_info);
 
-
+  if (document.getElementById("profilePicture") != null) {
+    document.getElementById("profilePicture").onchange = function() { document.getElementById("upload").submit(); };
+  };
 
   ctrl.getCohorts = function() {
      $http.get('/profile/cohorts').then(function(response) {

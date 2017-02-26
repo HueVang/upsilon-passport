@@ -36,12 +36,9 @@
   </div>
 </nav>
 
-<p>
-  This is where the user profile will be.
-</p>
 
 
-<div id="profile-div">
+<div class="padding" id="profile-div">
   <div>
     <div class="profile-info">
       <h3>{{ profile.user_info[0].cohort }}</h3>
@@ -51,10 +48,11 @@
         <br />
         <img class="avatar" ng-src="/uploads/{{ profile.user_info[0].username }}.jpg" alt="Picture"/>
         <hr />
-        <!-- <form id="upload" action="/profile/image" method="post" enctype="multipart/form-data">
-          <input type="file" name="{{ profile.user_info[0].username }}"/>
-          <input class="btn" type="submit" name="submit" value="submit"/>
-        </form> -->
+        <form id="upload" action="/profile/image" method="post" enctype="multipart/form-data">
+          <label class="btn btn-primary" for="profilePicture">Change Profile Picture</label>
+          <input id="profilePicture" type="file" name="{{ profile.user_info[0].username }}"/>
+          <!-- <input class="btn" type="submit" name="submit" value="submit"/> -->
+        </form>
       </div>
       <div id="icons">
         <button id="editButton" class="btn btn-primary" ng-click="profile.edit()">EDIT</button>
