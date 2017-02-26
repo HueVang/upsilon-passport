@@ -3,8 +3,8 @@ body {
   height: 100%;
   /*background-color: #89bdd3;*/
   /*background-color: black;*/
-  background-color: #b2b2b2;
-  background-color: rgba(0, 0, 0, .45);
+  /*background-color: #b2b2b2;*/
+  background-color: rgba(0, 0, 0, 0.45);
 }
 
 h1, h2, p {
@@ -115,19 +115,164 @@ a:hover + .arrow-up {
 }
 
 .avatar {
-  border: 4px double black;
-  border-radius: 15%;
+  border: 4px double white;
+  /*border-radius: 15%;*/
   display: inline-block;
 }
 
 .avatar img {
   border-radius: inherit;
+  max-height: inherit;
+  max-width: inherit;
 }
 
 #registerForm {
   position: absolute;
   top: 25%;
   /*margin: 0 auto;*/
+}
+
+.modalInfo p {
+  color: black;
+}
+
+.modal-content {
+  background-color: #89bdd3;
+}
+
+#profile-div {
+  text-align: center;
+  animation: fadein 1s;
+}
+
+#profile-div div {
+  /*background-color: teal;*/
+  /*max-width: 100%;*/
+}
+
+.profile-info {
+  border-radius: 1%;
+  width: 50%;
+  border: 1px solid rgba(12, 12, 12, 0.45);
+  background-color: #798b96;
+  display: inline-block;
+  color: #42d6c7;
+  /*box-shadow: 0px 10px 10px 0px gainsboro;*/
+}
+
+.profile-info p, .profile-info span, .profile-info h3, .navItems a, #fixedDiv span, h2 {
+  /*color: #42d6c7;*/
+  text-shadow: 0.5px 0.5px 4px #474747;
+}
+
+/*.profile-info h3, .navItems a {
+  text-shadow: 0.5px 0.5px 4px #474747;
+}*/
+
+
+#profile-div .frame {
+  /*max-width: 50%;*/
+  float: left;
+  margin-bottom: 1em;
+  margin-left: 1em;
+}
+
+#profile-div #icons {
+  float: right;
+  margin-top: -3em;
+  margin-right: 2em;
+}
+
+#profile-div #icons img {
+  max-width: 32px;
+  max-height: 32px;
+}
+
+
+.profile-facts {
+  /*display: inline-block;*/
+  width: 50%;
+  float: right;
+  margin-top: 3em;
+  margin-right: 1em;
+}
+
+.profile {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    display: inline-block;
+    filter: grayscale(100%);
+}
+
+.middle {
+  padding: 2px 16px;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  background-color: rgba(0,0,0,0.2);
+}
+
+.middle p {
+  color: black;
+}
+
+.profile:hover {
+    filter: none;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+}
+
+hr {
+  width: 50%;
+  /*border: 1px solid;*/
+  /*color: #42d6c7;*/
+}
+
+#icons img {
+  cursor: pointer;
+}
+
+.name {
+  font-style: italic;
+  font-weight: bold;
+  color: whitesmoke;
+}
+
+#editButton {
+  height: 25px;
+  width: 45px;
+  padding: 0;
+  margin-right: 5px;
+}
+
+#registerTitle {
+  margin-bottom: 20px;
+}
+
+#registerButton {
+  margin-top: 10px;
+}
+
+#editImage {
+  float: right;
+  margin: 10px 0 0 75px;
+}
+
+#editButtons {
+  display: block;
+  width: 100%;
+  height: 40px;
+  padding-left: 33%;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+#editButtons button {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+#dropdown {
+  /*appearance: none;*/
 }
 
 
@@ -142,7 +287,7 @@ ul {
 img {
   max-height: 250px;
   max-width: 250px;
-  border-radius: 50%;
+  /*border-radius: 50%;*/
 }
 
 p {
@@ -176,23 +321,8 @@ p {
 }
 
 
-.profile {
-  display: inline-block;
-  filter: grayscale(100%);
-}
-
-.profile:hover {
-  filter: none;
-}
-
 .red {
   background-color: red;
-}
-
-.middle {
-  display: block;
-  margin: 0 auto;
-  position: relative;
 }
 
 .center {
@@ -237,21 +367,8 @@ nav ul {
 }
 
 
-#profile-div {
-  text-align: center;
-}
-
-.profile-info {
-  display: inline-block;
-
-}
-
-.profile-facts {
-  display: inline-block;
-}
-
 .modalStyle {
-  background-color: #89bdd3;
+  /*background-color: #89bdd3;*/
   color: green;
 }
 

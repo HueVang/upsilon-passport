@@ -4,12 +4,13 @@ angular.module('soloApp').controller('ProfileController', function($http, $locat
   var ctrl = this;
   ctrl.user_info = [{"firstname" : "",
   "lastname" : "",
-  "image" : "",
   "personalsummary" : "",
   "cohort" : "",
   "title" : "",
   "user_location" : "",
-  "facts" : ""
+  "facts" : "",
+  "github" : "",
+  "linkedin" : ""
 }];
 
 
@@ -39,6 +40,29 @@ angular.module('soloApp').controller('ProfileController', function($http, $locat
   }; // end getUserInfo function
 
   ctrl.getUserInfo();
+
+  ctrl.github = function() {
+    if (ctrl.user_info[0].github == null) {
+      console.log('No github link');
+      $location.path('/profile');
+    } else {
+      console.log('This is the path ', ctrl.user_info[0].github);
+      window.location.href = (ctrl.user_info[0].github);
+    }
+  }; // end github function
+
+  ctrl.linkedin = function() {
+    if (ctrl.user_info[0].linkedin == null) {
+      console.log('No linkedin link');
+      $location.path('/profile');
+    } else {
+      window.location.href = (ctrl.user_info[0].linkedin);
+    }
+  }; // end linkedin function
+
+  ctrl.profilePage = function() {
+    $location.path('/profile');
+  }; //end profilePage function
 
   ctrl.edit = function() {
     $location.path('/profile-edit');

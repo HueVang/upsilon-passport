@@ -19,8 +19,8 @@ angular.module('soloApp').controller('RegisterController', function($http, $loca
   ctrl.login = function() {
     console.log('logging in');
     $http.post('/login', {
-      username: ctrl.username,
-      password: ctrl.password
+      username: ctrl.usernamelogin,
+      password: ctrl.passwordlogin
     }).then(function(response){
       console.log(response);
       $location.path('/home');

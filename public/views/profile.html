@@ -23,7 +23,7 @@
     </ul>
   </div>
   <div class="fixedDiv">
-    <div ng-click="home.profilePage()">
+    <div ng-click="profile.profilePage()">
       <div class="arrow-right"></div>
       <span>{{ profile.user_info[0].firstname }}</span>
       <span>
@@ -32,7 +32,7 @@
         </div>
       </span>
     </div>
-    <button id="logoutButton" ng-click="profile.logout()">Logout</button>
+    <button id="logoutButton" class="btn btn-danger"ng-click="profile.logout()">Logout</button>
   </div>
 </nav>
 
@@ -42,21 +42,36 @@
 
 
 <div id="profile-div">
-  <div class="profile-info">
-    <h3>{{ profile.user_info[0].cohort }}</h3>
-    <button class="btn-warning" ng-click="profile.edit()">Edit</button>
-    <span>{{ profile.user_info[0].firstname }} </span><span>{{ profile.user_info[0].lastname }}</span>
-    <br />
-    <img class="avatar" ng-src="/uploads/{{ profile.user_info[0].username }}.jpg" alt="Picture"/>
-    <form action="/profile/image" method="post" enctype="multipart/form-data">
-      <input type="file" name="{{ profile.user_info[0].username }}"/>
-      <input type="submit" name="submit" value="submit"/>
-    </form>
-    <p>{{ profile.user_info[0].personalsummary }}</p>
-  </div>
-  <div class="see-this profile-facts">
-    <p><span>Title: </span>{{ profile.user_info[0].title }}</p>
-    <p><span>Location: </span>{{ profile.user_info[0].user_location }}</p>
-    <p><span>Facts: </span>{{ profile.user_info[0].facts }}</p>
+  <div>
+    <div class="profile-info">
+      <h3>{{ profile.user_info[0].cohort }}</h3>
+      <div class="frame">
+        <span class="name">{{ profile.user_info[0].firstname }} </span><span class="name">{{ profile.user_info[0].lastname }}</span>
+        <br />
+        <br />
+        <img class="avatar" ng-src="/uploads/{{ profile.user_info[0].username }}.jpg" alt="Picture"/>
+        <hr />
+        <!-- <form id="upload" action="/profile/image" method="post" enctype="multipart/form-data">
+          <input type="file" name="{{ profile.user_info[0].username }}"/>
+          <input class="btn" type="submit" name="submit" value="submit"/>
+        </form> -->
+      </div>
+      <div id="icons">
+        <button id="editButton" class="btn btn-primary" ng-click="profile.edit()">EDIT</button>
+        <img ng-click="profile.github()" ng-src="/icons/Github-Mark-32px.png" alt="Github Icon"/>
+        <img ng-click="profile.linkedin()" ng-src="/icons/linkedin-logo.png" alt="Linkedin Icon"/>
+        <!-- <a ng-href="{{profile.user_info[0].github}}"><img ng-src="/icons/Github-Mark-32px.png" alt="Github Icon"/></a>
+        <a ng-href="{{profile.user_info[0].linkedin}} == !null ? {{profile.user_info[0].linkedin}} : /profile"><img ng-src="/icons/linkedin-logo.png" alt="Linkedin Icon"/></a> -->
+      </div>
+      <div class="profile-facts">
+        <p>{{ profile.user_info[0].title }}</p>
+        <hr />
+        <p>{{ profile.user_info[0].user_location }}</p>
+        <hr />
+        <p>{{ profile.user_info[0].facts }}</p>
+        <hr />
+        <p>{{ profile.user_info[0].personalsummary }}</p>
+      </div>
+    </div>
   </div>
 </div>

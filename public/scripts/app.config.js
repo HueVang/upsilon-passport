@@ -38,8 +38,8 @@ angular
         authRequired: true
       })
       .otherwise({
-        templateUrl: "views/login.html",
-        controller: "LoginController as login"
+        templateUrl: "views/register.html",
+        controller: "RegisterController as register"
       });
   })
   .run(function($rootScope, $location, $route, AuthService) {

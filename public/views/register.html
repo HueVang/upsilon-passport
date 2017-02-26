@@ -17,10 +17,10 @@
       <li>
         <form class="fixedDiv navbar-form navbar-left" ng-submit="register.login()">
           <div class="form-group">
-            <input placeholder="username" type="text" class="form-control" ng-model="register.username"/>
-            <input placeholder="password" type="password" class="form-control" ng-model="register.password"/>
+            <input placeholder="username" type="text" class="form-control" ng-model="register.usernamelogin"/>
+            <input placeholder="password" type="password" class="form-control" ng-model="register.passwordlogin"/>
           </div>
-          <button type="submit" class="btn btn-default">Login</button>
+          <button type="submit" class="btn btn-primary">Login</button>
         </form>
       </li>
     </ul>
@@ -32,7 +32,11 @@
 <br />
 <br /> -->
 
+
 <form id="registerForm" class="form-horizontal col-xs-12 col-md-6 col-md-offset-3 well" ng-submit="register.register()">
+  <div id="registerTitle" class="center">
+    <h3>Create an Account</h3>
+  </div>
   <div class="form-group row">
     <label class="control-label col-xs-offset-1 col-xs-2">Username:</label>
     <div class="col-xs-8">
@@ -45,7 +49,7 @@
       <input class="form-control" type="password" ng-model="register.password">
     </div>
   </div>
-  <div class="col-xs-offset-3 col-xs-10">
-    <button type="submit" class="btn btn-primary" >Register</button>
+  <div class="col-xs-offset-3 col-xs-10 center">
+    <button id="registerButton" type="submit" class="btn btn-success" >Register</button>
   </div>
 </form>

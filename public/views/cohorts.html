@@ -32,7 +32,7 @@
         </div>
       </span>
     </div>
-    <button id="logoutButton" ng-click="vm.logout()">Logout</button>
+    <button class="btn btn-danger" id="logoutButton" ng-click="vm.logout()">Logout</button>
   </div>
 </nav>
 
@@ -41,10 +41,11 @@
 </p>
 
 <div class="center">
-  <select class="middle" ng-model="cohortName" ng-change="vm.getCohort(cohortName)" >
+  <select class="" ng-model="cohortName" ng-change="vm.getCohort(cohortName)" >
     <option ng-repeat="cohort in vm.cohorts" value="{{cohort.cohort_name}}">{{ cohort.cohort_name }}</option>
   </select>
 </div>
+
 
 
 
@@ -54,10 +55,10 @@
   <li ng-repeat="user in vm.cohort">
     <button id="clickModal" data-toggle="modal" data-target="#{{user.firstname}}">
     <div class="profile">
-      <div id="user_{{ user.username }}" ng-click="vm.showProfile(user.username)">
+      <!-- <div id="user_{{ user.username }}"> -->
         <img ng-src="/uploads/{{ user.username }}.jpg" alt="Picture"/>
-      </div>
-      <div  class="middle">
+      <!-- </div> -->
+      <div class="middle">
         <p> {{ user.firstname }} {{ user.lastname }}</p>
       </div>
     </div>
@@ -78,7 +79,7 @@
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
           <h4 class="modal-title" id="myModalLabel">{{ user.username }}</h4>
         </div>
-        <div class="modal-body">
+        <div class="modal-body modalInfo">
           <p>Name: {{ user.firstname }} {{ user.lastname }}</p>
           <img ng-src="/uploads/{{ user.username }}.jpg" alt="Picture"/>
           <p>Summary: </p>

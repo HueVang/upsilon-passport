@@ -114,9 +114,9 @@ router.post('/post',function(req,res){
     } else {
 
      client.query(
-       'UPDATE users SET firstname=$2, lastname=$3, image=$4, personalsummary=$5, cohort=$6, title=$7, user_location=$8, facts=$9 WHERE id=$1 RETURNING *;',
-      [req.user.id,req.body.firstname, req.body.lastname, req.body.image, req.body.personalsummary,
-       req.body.cohort, req.body.title, req.body.user_location, req.body.facts],
+       'UPDATE users SET firstname=$2, lastname=$3, personalsummary=$4, cohort=$5, title=$6, user_location=$7, facts=$8, github=$9, linkedin=$10 WHERE id=$1 RETURNING *;',
+      [req.user.id,req.body.firstname, req.body.lastname, req.body.personalsummary,
+       req.body.cohort, req.body.title, req.body.user_location, req.body.facts, req.body.github, req.body.linkedin],
       function(err,result){
         done();
         if(err){
