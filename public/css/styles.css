@@ -11,6 +11,11 @@ h1, h2, p {
   color: white;
 }
 
+#title {
+  text-align: center;
+  font-variant: small-caps;
+}
+
 #navDiv {
   text-align: center;
   position: fixed;
@@ -412,21 +417,28 @@ hr {
 }
 
 #modalIcons {
-  text-align: center;
+  text-align: right;
   /*margin: auto 0;*/
   /*width: 210px;
   height: 350px;*/
 }
 
+#modalEmail {
+  text-align: center;
+  display: inline-block;
+  width: 75%;
+}
+
 #modalIcons p {
   color: #42d6c7;
+  display: inline;
 }
 
 #modalIcons img {
   height: 32px;
   width: 32px;
-  float: none;
-  margin: 10px 0px;
+  /*text-align: right;*/
+  /*margin: 10px 0px;*/
   cursor: pointer;
   border: none;
 }

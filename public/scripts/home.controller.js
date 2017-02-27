@@ -44,9 +44,19 @@ angular.module('soloApp').controller('HomeController', function($http, $location
       var random3 = Math.floor(Math.random()*ctrl.usernames.length);
       var username3 = ctrl.usernames.splice(random3, 1)[0].username;
       // console.log('This is the usernames array : ', ctrl.usernames);
-      // var random4 = Math.floor(Math.random()*ctrl.usernames.length);
-      // var username4 = ctrl.usernames.splice(random4, 1)[0].username;
-      ctrl.random = [username, username2, username3];
+      var random4 = Math.floor(Math.random()*ctrl.usernames.length);
+      var username4 = ctrl.usernames.splice(random4, 1)[0].username;
+      var random5 = Math.floor(Math.random()*ctrl.usernames.length);
+      var username5 = ctrl.usernames.splice(random5, 1)[0].username;
+      var random6 = Math.floor(Math.random()*ctrl.usernames.length);
+      var username6 = ctrl.usernames.splice(random6, 1)[0].username;
+      var random7 = Math.floor(Math.random()*ctrl.usernames.length);
+      var username7 = ctrl.usernames.splice(random7, 1)[0].username;
+      var random8 = Math.floor(Math.random()*ctrl.usernames.length);
+      var username8 = ctrl.usernames.splice(random8, 1)[0].username;
+      var random9 = Math.floor(Math.random()*ctrl.usernames.length);
+      var username9 = ctrl.usernames.splice(random9, 1)[0].username;
+      ctrl.random = [username, username2, username3, username4, username5, username6, username7, username8, username9];
       // ctrl.random = [username, username2, username3, username4];
 
 
