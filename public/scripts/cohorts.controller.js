@@ -26,6 +26,23 @@ angular.module('soloApp').controller('CohortsController', function($http, $locat
 
   ctrl.getUserInfo();
 
+  ctrl.github = function(link) {
+    if (link == null) {
+      console.log('No github link');
+    } else {
+      console.log('This is the path ', link);
+      window.location.href = (link);
+    }
+  }; // end github function
+
+  ctrl.linkedin = function(link) {
+    if (link == null) {
+      console.log('No linkedin link');
+    } else {
+      window.location.href = (link);
+    }
+  }; // end linkedin function
+
 
   ctrl.getCohorts = function() {
      $http.get('/cohorts/cohorts').then(function(response) {
@@ -56,6 +73,36 @@ angular.module('soloApp').controller('CohortsController', function($http, $locat
       console.log('error getting response from the cohorts :', err);
     });
   }; // end getUsers function
+
+  ctrl.getUsers();
+
+  ctrl.getUsers = function() {
+     $http.get('/home/usernames').then(function(response) {
+      ctrl.usernames = response.data;
+
+      // console.log('This is the usernames data: ',response.data);
+
+      // selects random name from the ctrl.usernames array and then removes it from the array.
+      var random1 = Math.floor(Math.random()*ctrl.usernames.length);
+      var username = ctrl.usernames.splice(random1, 1)[0].username;
+      // console.log('This is the usernames array : ', ctrl.usernames);
+      var random2 = Math.floor(Math.random()*ctrl.usernames.length);
+      var username2 = ctrl.usernames.splice(random2, 1)[0].username;
+      // console.log('This is the usernames array : ', ctrl.usernames);
+      var random3 = Math.floor(Math.random()*ctrl.usernames.length);
+      var username3 = ctrl.usernames.splice(random3, 1)[0].username;
+      // console.log('This is the usernames array : ', ctrl.usernames);
+      // var random4 = Math.floor(Math.random()*ctrl.usernames.length);
+      // var username4 = ctrl.usernames.splice(random4, 1)[0].username;
+      ctrl.random = [username, username2, username3];
+      // ctrl.random = [username, username2, username3, username4];
+
+
+      console.log('This is the random array : ', ctrl.random);
+    }).catch(function(err) {
+      console.log('error getting response from the home :', err);
+    });
+  }; // end getCohorts function
 
   ctrl.getUsers();
 

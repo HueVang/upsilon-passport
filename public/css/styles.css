@@ -162,7 +162,7 @@ a:hover + .arrow-up {
   /*box-shadow: 0px 10px 10px 0px gainsboro;*/
 }
 
-.profile-info p, .profile-info span, .profile-info h3, .navItems a, #fixedDiv span, h2 {
+.profile-info p, .profile-info span, .profile-info h3, .navItems a, #fixedDiv span, h2, p, span, h3, h4 {
   /*color: #42d6c7;*/
   text-shadow: 0.5px 0.5px 4px #474747;
 }
@@ -177,6 +177,10 @@ a:hover + .arrow-up {
   float: left;
   margin-bottom: 1em;
   margin-left: 1em;
+}
+
+.profile-info .frame {
+  color: black;
 }
 
 #profile-div #icons {
@@ -337,6 +341,99 @@ hr {
   background-color: gray;
 }
 
+#modalContent {
+  /*background-color: magenta;*/
+  height: 350px;
+  padding: 5px 5px;
+  text-align: center;
+}
+
+#modalContent img {
+  border: 4px double white;
+  float: left;
+  max-width:210px;
+  max-height:250px;
+  width: auto;
+  height: auto;
+}
+
+#modalContent div {
+  /*text-align: center;*/
+  margin: 20px 10px 0px 10px;
+}
+
+#modalContent div span {
+  margin-left: 5.5em
+}
+
+#modalInfo {
+  width: 50%;
+  display: inline-block;
+  float: none;
+}
+
+#modalInfo p {
+  color: white;
+}
+
+.modalStyle {
+  /*background-color: #89bdd3;*/
+  color: #42d6c7;
+}
+
+.modal-title {
+  text-align: center;
+}
+
+.modal-backdrop {
+  /*background-color: black;*/
+}
+
+#modalLeftSide {
+  height: 100%;
+  width: 39%;
+  float: left;
+}
+
+#modalLeftSide #modalImg {
+  text-align: center;
+}
+
+
+/*#modalLeftSide div {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}*/
+
+#myModalLabel {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+#modalIcons {
+  text-align: center;
+  /*margin: auto 0;*/
+  /*width: 210px;
+  height: 350px;*/
+}
+
+#modalIcons p {
+  color: #42d6c7;
+}
+
+#modalIcons img {
+  height: 32px;
+  width: 32px;
+  float: none;
+  margin: 10px 0px;
+  cursor: pointer;
+  border: none;
+}
+
+.colorMe {
+  color: #42d6c7;
+}
 
 .container {
   width: 100%;
@@ -427,17 +524,6 @@ nav ul {
 	0%  {-webkit-transform: rotateX(0deg);}
 	100% {-webkit-transform: rotateX(360deg);}
 }
-
-
-.modalStyle {
-  /*background-color: #89bdd3;*/
-  color: green;
-}
-
-.modal-backdrop {
-  /*background-color: black;*/
-}
-
 
 
 .see-this {
