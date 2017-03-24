@@ -16,6 +16,46 @@ h1, h2, p {
   font-variant: small-caps;
 }
 
+#logo {
+  margin-top: 0%;
+  text-align: center;
+  animation: fadein 3s;
+}
+
+#logo img {
+  border: 5px double rgba(12, 12, 12, 0.45);
+  max-height: 200px;
+  max-width: 200px;
+}
+
+#logo img:hover {
+  /*animation: spin 3s infinite linear;*/
+}
+
+/*.shine {
+  position: relative;
+  overflow: hidden;
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+
+  margin: 25px 0 25px 25px;
+  border-radius: 5px;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  line-height: 50px;
+  font-size: 12px;
+  font-family: sans-serif;
+}*/
+
+
+
+
+#galleryDiv {
+  text-align: center;
+}
+
 #navDiv {
   text-align: center;
   position: fixed;
@@ -123,6 +163,63 @@ a:hover + .arrow-up {
   border: 4px double white;
   /*border-radius: 15%;*/
   display: inline-block;
+  /*background-color: gray;*/
+}
+
+.special-effect {
+  /*-webkit-transition: all 0.5s ease;
+     -moz-transition: all 0.5s ease;
+       -o-transition: all 0.5s ease;
+      -ms-transition: all 0.5s ease;*/
+          transition: all 0.5s ease;
+}
+
+.special-effect:hover {
+  border-radius: 50%;
+  /*-webkit-transform: rotate(360deg);
+     -moz-transform: rotate(360deg);
+       -o-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);*/
+          transform: rotate(360deg);
+}
+
+.tooly {
+    position: relative;
+    display: inline-block;
+    /*border-bottom: 1px dotted black;*/
+}
+
+.tooly .toolytext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 110%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.tooly .toolytext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+
+.tooly:hover .toolytext {
+    visibility: visible;
+    opacity: 1;
 }
 
 .avatar img {
@@ -296,7 +393,6 @@ hr {
   float: left;
 }
 
-
 #profilePicture {
   visibility: hidden;
 }
@@ -310,7 +406,7 @@ hr {
 }
 
 #cohortSelect {
-  margin-top: 40px;
+  /*margin-top: 40px;*/
 }
 
 #summaryDiv {
@@ -343,7 +439,7 @@ hr {
 }*/
 
 #cohortMainDiv {
-  background-color: gray;
+  /*background-color: gray;*/
 }
 
 #modalContent {

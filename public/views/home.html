@@ -36,12 +36,19 @@
   </div>
 </nav>
 
-<h1 id="title">Cohort Tracker</h1>
+<!-- <h1 id="title">Cohort Tracker</h1> -->
+<div id="logo">
+  <img src="/icons/logo.jpg" alt="">
+</div>
 
-
-  <div class="col-xs-offset-2 col-sm-offset-1 col-md-offset-2 col-lg-offset-2 col-xl-offset-2 avatar padding" ng-repeat="person in home.random">
-    <img class="feat" ng-src="/uploads/{{ person }}.jpg" alt="Picture"/>
+  <div id="galleryDiv">
+    <div class="col-lg-1.5 avatar padding special-effect tooly" ng-repeat="person in home.random">
+    <!-- <div class="col-xs-offset-2 col-sm-offset-1 col-md-offset-2 col-lg-offset-2 col-lg-1.5 col-xl-offset-2 avatar padding" ng-repeat="person in home.random"> -->
+      <img class="feat " ng-src="/uploads/{{ person.username }}.jpg" alt="Picture"/>
+      <span class="toolytext">{{person.firstname}} {{person.lastname}}</span>
+    </div>
   </div>
+
 
   <!-- <div class="row">
     <div class="col-xs-6 col-md-3 fill" ng-repeat="person in home.random">
