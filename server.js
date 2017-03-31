@@ -7,7 +7,6 @@ var config = {database : 'dljn2v22d1htu'};
 var multer = require('multer');
 var upload = multer({dest: 'uploads/'})
 
-
 var connection = require('./db/connection');
 var login = require('./routes/login');
 var register = require('./routes/register');
@@ -20,7 +19,6 @@ require('./auth/setup');
 connection.connect();
 
 var app = express();
-var http = require('http').Server(app);
 
 var sessionConfig = {
   secret: process.env.SECRET || 'super secret key goes here',
@@ -72,10 +70,6 @@ app.get('/*', function(req, res){
 
 
 
-// var server = app.listen(process.env.PORT || 3000, function() {
-//   console.log('Listening on port', server.address().port);
-// });
-
-var server = http.listen(process.env.PORT || 3000, function() {
-  console.log('Listening on port');
+var server = app.listen(process.env.PORT || 3000, function() {
+  console.log('Listening on port', server.address().port);
 });

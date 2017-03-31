@@ -2,7 +2,7 @@ const router = require('express').Router();
 var passport = require('passport');
 
 var express = require('express');
-var config = {database : 'dljn2v22d1htu'};
+var config = {database : process.env.DATABASE_URI};
 var pg = require('pg');
 var pool = new pg.Pool(config);
 

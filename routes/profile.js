@@ -1,5 +1,5 @@
 var express = require('express');
-var config = {database : 'dljn2v22d1htu'};
+var config = {database : process.env.DATABASE_URI};
 var pg = require('pg');
 var multer = require('multer');
 // var upload = multer({dest: '/Users/huevang/Upsilon/solo-project/upsilon-passport/public/uploads/'})
