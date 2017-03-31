@@ -3,7 +3,7 @@ var bodyParser = require('body-parser');
 var path = require('path');
 var session = require('express-session');
 var passport = require('passport');
-var config = {database : 'postgres://idwqxqspnhwibt:1e1434b18a9ee44d5a4bdc3ef1d9981cf78c65efcf70f4cf5f23c07e5876036d@ec2-54-235-92-236.compute-1.amazonaws.com:5432/dljn2v22d1htu'};
+var config = {database : 'dljn2v22d1htu'};
 var multer = require('multer');
 var upload = multer({dest: 'uploads/'})
 
