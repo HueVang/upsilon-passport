@@ -6,7 +6,7 @@ var passport = require('passport');
 var config = {database : 'dljn2v22d1htu'};
 var multer = require('multer');
 var upload = multer({dest: 'uploads/'})
-
+var http = require('http').Server(app);
 
 var connection = require('./db/connection');
 var login = require('./routes/login');
@@ -71,6 +71,10 @@ app.get('/*', function(req, res){
 
 
 
-var server = app.listen(process.env.PORT || 3000, function() {
-  console.log('Listening on port', server.address().port);
+// var server = app.listen(process.env.PORT || 3000, function() {
+//   console.log('Listening on port', server.address().port);
+// });
+
+var server = http.listen(process.env.PORT || 3000, function() {
+  console.log('Listening on port');
 });

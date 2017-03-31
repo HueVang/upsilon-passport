@@ -23,8 +23,7 @@ router.get('/users', function(req, res){
       done();
     } else {
      client.query(
-       'SELECT * from users;'
-      ,
+       'SELECT * from users;',
       function(err,result){
         done();
         if(err){
