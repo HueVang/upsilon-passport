@@ -1,5 +1,5 @@
 var express = require('express');
-var config = {database : process.env.DATABASE_URI};
+var config = {database : process.env.DATABASE_URL};
 var pg = require('pg');
 
 var router = express.Router();
