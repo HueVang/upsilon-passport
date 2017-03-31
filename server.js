@@ -6,7 +6,7 @@ var passport = require('passport');
 var config = {database : 'dljn2v22d1htu'};
 var multer = require('multer');
 var upload = multer({dest: 'uploads/'})
-var http = require('http').Server(app);
+
 
 var connection = require('./db/connection');
 var login = require('./routes/login');
@@ -20,6 +20,7 @@ require('./auth/setup');
 connection.connect();
 
 var app = express();
+var http = require('http').Server(app);
 
 var sessionConfig = {
   secret: process.env.SECRET || 'super secret key goes here',
